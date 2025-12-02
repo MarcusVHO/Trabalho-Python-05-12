@@ -96,11 +96,11 @@ def verificar_email():
 
 
 def verificar_telefone():
-  tamanho_peça = int(input("Digite o telefone: "))
-  if len(tamanho_peça) != 9:
+  tamanho_peca = input("Digite o telefone: ")
+  if len(tamanho_peca) != 9:
       print("Telefone invalido!!!")
       verificar_telefone()
-  return tamanho_peça()
+  return tamanho_peca
 
 def verificar_naturalidade():
     naturalidade = input("Digite sua naturalidade: ")
@@ -129,5 +129,3 @@ def verificar_estado():
     estado = input("Digite seu estado: ")
     return estado
 
-
-verificar_nascimento()

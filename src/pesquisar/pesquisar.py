@@ -28,6 +28,7 @@ def solicitar_nome(lista_pessoas):
         exibir_bunitim(pessoa_encontrada)
     else:
         print("Nenhum nome foi encontrado")
+        input("Pressione ENTER para voltar ao menu...")
 
 
 def pesquisa_menu(lista_pessoas):
