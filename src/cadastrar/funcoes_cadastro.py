@@ -10,7 +10,7 @@ def verificar_nome():
         os.system("cls")
         print("O nome deve conter mais de uma palavra!! ")
         print("Digite novamente!! ")
-        verificar_nome()
+        nome = verificar_nome()
     return nome.upper()
 
 #recursividade!!!
@@ -76,14 +76,14 @@ def verificar_nascimento():
         os.system("cls")
         print("Data invalida!!!!!")
         print("Digite novamente!!!")
-        verificar_nascimento()
+        nascimento = verificar_nascimento()
 
     esta_correto = verificar_formato_nascimento(nascimento)
     if not esta_correto:
         os.system("cls")
         print("Data invalida!!!!!")
         print("Digite novamente!!!")
-        verificar_nascimento()
+        nascimento = verificar_nascimento()
 
 
     return nascimento
@@ -98,7 +98,7 @@ def verificar_telefone():
   tamanho_peca = input("Digite o telefone (deve conter 9 numeros): ")
   if len(tamanho_peca) != 9:
       print("Telefone invalido!!!")
-      verificar_telefone()
+      tamanho_peca = verificar_telefone()
   return tamanho_peca
 
 def verificar_naturalidade():

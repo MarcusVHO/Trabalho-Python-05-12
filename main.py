@@ -10,6 +10,7 @@ from src.pesquisar.pesquisa_funcoes import exibir_bunitim
 
 lista_pessoas = []
 while True:
+    os.system("cls")
     opcao = menu_principal()
     match opcao:
         case 1:

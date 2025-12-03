@@ -6,7 +6,6 @@ def pesquisa_por_nome(nome, lista_pessoas):
     return None
 
 
-
 def exibir_bunitim(pessoa):
     print("NOME: ", pessoa["nome"])
     print("CPF: ", pessoa["cpf"])
