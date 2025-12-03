@@ -8,15 +8,17 @@ def pesquisa_por_nome(nome, lista_pessoas):
 
 
 def exibir_bunitim(pessoa):
-    print(" ========= RESULTADO ========= ")
     print("NOME: ", pessoa["nome"])
     print("CPF: ", pessoa["cpf"])
+    print("DATA DE NASCIMENTO: ", pessoa["nascimento"])
     print("EMAIL: ", pessoa["email"])
+    print("TELEFONE: ", pessoa["telefone"])
+    print("NATURALIDADE: ", pessoa["naturalidade"])
     print("ENDEREÇO:", pessoa["endereco"])
     print("NUMERO: ", pessoa["numero"])
     print("BAIRRO: ", pessoa["bairro"])
+    print("CIDADE: ", pessoa["cidade"])
     print("ESTADO: ", pessoa["estado"])
-    print("DATA DE NASCIMENTO: ", pessoa["nascimento"])
 
 
 
@@ -26,25 +28,13 @@ def solicitar_nome(lista_pessoas):
 
     if pessoa_encontrada:
         exibir_bunitim(pessoa_encontrada)
+        input("Pressione ENTER para voltar ao menu...")
     else:
         print("Nenhum nome foi encontrado")
         input("Pressione ENTER para voltar ao menu...")
 
 
-def pesquisa_menu(lista_pessoas):
-    print("== Escolha a opção desejada de busca ==")
-    print(" [ 1 ] = Nome ")
-    print(" [ 2 ] = CPF  ")
-    opcao = int(input(" Tipo: "))
 
-    if opcao == 1:
-       solicitar_nome(lista_pessoas)
-
-    elif opcao == 2:
-        solicitar_cpf(lista_pessoas)
-
-    else:
-        print("Opção invalida!!")
 
 
 def pesquisar_por_cpf(cpf, lista_pessoas):
@@ -60,6 +50,7 @@ def solicitar_cpf(lista_pessoas):
 
     if pessoa_encontrada:
         exibir_bunitim(pessoa_encontrada)
+        input("Pressione ENTER para voltar ao menu...")
     else:
         print("Nenhum Cpf foi encontrado")
 

@@ -1,6 +1,6 @@
 import os
 
-from src.pesquisar.pesquisar import pesquisar_por_cpf
+from src.pesquisar.pesquisa_funcoes import pesquisar_por_cpf
 
 
 def verificar_nome():
@@ -17,28 +17,30 @@ def verificar_nome():
 
 
 def verificar_cpf(lista_pessoas):
-    print("Digite seu CPF no formato XXX.XXX.XXX-XX por favor!!!")
-    cpf = input("Digite seu CPF: ")
-    if not cpf:
-        os.system("cls")
-        print("CPF digitado invalido!!!!")
-        print("Digite novamente!! ")
-        verificar_cpf(lista_pessoas)
+    while True:
+        print("Digite seu CPF no formato XXX.XXX.XXX-XX por favor!!!")
+        cpf = input("Digite seu CPF: ")
+        if not cpf:
+            os.system("cls")
+            print("CPF digitado invalido!!!!")
+            print("Digite novamente!! ")
+            continue
 
-    retornado = verificar_formato_cpf(cpf)
+        retornado = verificar_formato_cpf(cpf)
 
-    if not retornado:
-        os.system("cls")
-        print("CPF digitado invalido!!!!")
-        print("Digite novamente!! ")
-        verificar_cpf(lista_pessoas)
+        if not retornado:
+            os.system("cls")
+            print("CPF digitado invalido!!!!")
+            print("Digite novamente!! ")
+            continue
 
-    cpf_existe = pesquisar_por_cpf(cpf, lista_pessoas)
+        cpf_existe = pesquisar_por_cpf(cpf, lista_pessoas)
 
-    if cpf_existe:
-        print("Este CPF já está cadastrado!!")
-        return None
-    return cpf
+        if cpf_existe:
+            print("Este CPF já está cadastrado!!")
+            return None
+
+        return cpf
 
 
 def verificar_formato_cpf(cpf):
@@ -51,10 +53,7 @@ def verificar_formato_cpf(cpf):
 
     if len(ultima_parte) != 2:
         return False
-    elif len(ultima_parte[0]) != 3:
-        return False
-    elif len(ultima_parte[1]) != 2:
-        return False
+
     return True
 
 def verificar_formato_nascimento(nascimento):
