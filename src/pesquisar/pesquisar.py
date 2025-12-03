@@ -55,7 +55,7 @@ def pesquisar_por_cpf(cpf, lista_pessoas):
 
 
 def solicitar_cpf(lista_pessoas):
-    cpf = input("Digite o CPF para busca: ")
+    cpf = input("Digite o CPF para busca (formato: XXX.XXX.XXX-XX): ")
     pessoa_encontrada = pesquisar_por_cpf(cpf, lista_pessoas)
 
     if pessoa_encontrada:

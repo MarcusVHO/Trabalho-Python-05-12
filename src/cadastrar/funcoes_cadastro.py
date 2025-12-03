@@ -8,7 +8,7 @@ def verificar_nome():
     nome_separado = nome.split(" ")
     if not len(nome_separado) > 1:
         os.system("cls")
-        print("O nome digitado está incorreto!!! ")
+        print("O nome deve conter mais de uma palavra!! ")
         print("Digite novamente!! ")
         verificar_nome()
     return nome.upper()
@@ -36,7 +36,7 @@ def verificar_cpf(lista_pessoas):
     cpf_existe = pesquisar_por_cpf(cpf, lista_pessoas)
 
     if cpf_existe:
-        print("Este CPF já cadastrado")
+        print("Este CPF já está cadastrado!!")
         return None
     return cpf
 
@@ -72,7 +72,7 @@ def verificar_formato_nascimento(nascimento):
         return True
 
 def verificar_nascimento():
-    nascimento = input("Digite sua data de nascimento: ")
+    nascimento = input("Digite sua data de nascimento (formato: XX/XX/XXXX): ")
     if not nascimento:
         os.system("cls")
         print("Data invalida!!!!!")
@@ -91,12 +91,12 @@ def verificar_nascimento():
 
 
 def verificar_email():
-    email = input("Digite seu email (valido apenas @gmail): ")
+    email = input("Digite seu email: ")
     return email
 
 
 def verificar_telefone():
-  tamanho_peca = input("Digite o telefone: ")
+  tamanho_peca = input("Digite o telefone (deve conter 9 numeros): ")
   if len(tamanho_peca) != 9:
       print("Telefone invalido!!!")
       verificar_telefone()
